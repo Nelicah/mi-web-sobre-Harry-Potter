@@ -3,26 +3,43 @@ import { useState, useEffect } from "react";
 
 function App() {
   const [characters, setCharacters] = useState([]);
-  const [characterFiltered, setCharacterFiltered] = useState("");
+  const [characterFiltered, setCharacterFiltered] = useState({
+    name: "",
+    house: "Gryffindor",
+  });
+  const [houseClass, setHouseClass] = useState("cards");
 
   // Use Effect
   useEffect(() => {
-    fetch("https://hp-api.onrender.com/api/characters/house/gryffindor")
+    fetch("https://hp-api.onrender.com/api/characters")
       .then((res) => res.json())
       .then((data) => {
         setCharacters(data);
       });
   }, []);
 
-  const handleInputCharacterFiltered = (ev) => {
-    setCharacterFiltered(ev.target.value);
+  const handleInputCharacterNameFiltered = (ev) => {
+    setCharacterFiltered({
+      ...characterFiltered,
+      name: ev.target.value,
+    });
+  };
+  const handleInputCharacterHouseFiltered = (ev) => {
+    setCharacterFiltered({
+      ...characterFiltered,
+      house: ev.target.value,
+    });
   };
 
-  const charactersFiltered = characters.filter((eachCharacter) =>
-    eachCharacter.name
-      .toLocaleLowerCase()
-      .includes(characterFiltered.toLocaleLowerCase())
-  );
+  const charactersFiltered = characters
+    .filter((eachCharacter) =>
+      eachCharacter.name
+        .toLocaleLowerCase()
+        .includes(characterFiltered.name.toLocaleLowerCase())
+    )
+    .filter((eachCharacter) =>
+      eachCharacter.house.includes(characterFiltered.house)
+    );
 
   return (
     <div className="dark-mode">
@@ -30,19 +47,35 @@ function App() {
         <h1>HARRY POTTER</h1>
       </header>
       <main>
-        <form action="">
+        <form onSubmit={(ev) => ev.preventDefault()}>
           <input
-            onInput={handleInputCharacterFiltered}
+            className="input-name"
+            onInput={handleInputCharacterNameFiltered}
             value={characterFiltered.name}
             type="text"
-            name=""
-            id=""
+            name="name"
+            id="name"
           />
+          <select
+            className="select-houses"
+            onInput={handleInputCharacterHouseFiltered}
+            name="houses"
+            id="houses"
+          >
+            <option value="Gryffindor">Gryffindor</option>
+            <option value="Slytherin">Slytherin</option>
+            <option value="Hufflepuff">Hufflepuff</option>
+            <option value="Ravenclaw">Ravenclaw</option>
+            <option value="">Todas las casas</option>
+          </select>
         </form>
         <article>
           <ul className="container-cards">
             {charactersFiltered.map((eachCharacter) => (
-              <li className="cards" key={eachCharacter.id}>
+              <li
+                className={`cards ${eachCharacter.house.toLowerCase()}`}
+                key={eachCharacter.id}
+              >
                 <img
                   className="card-image"
                   src={

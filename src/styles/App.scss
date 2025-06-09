@@ -4,6 +4,10 @@
   margin-left: 50px;
 }
 
+body {
+  background-color: grey;
+}
+
 .container-cards {
   display: grid;
   grid-template-columns: 230px 230px 230px;
@@ -12,11 +16,31 @@
 .cards {
   list-style-type: none;
   width: 150px;
-  border: solid 5px grey;
+  border: solid 5px red;
   margin-bottom: 20px;
+}
+
+.cards.slytherin {
+  border: solid 5px darkgreen;
+}
+
+.cards.hufflepuff {
+  border: solid 5px gold;
+}
+
+.cards.ravenclaw {
+  border: solid 5px darkblue;
 }
 
 .card-image {
   width: 100%;
   object-fit: contain;
+}
+
+.input-name {
+  margin-bottom: 10px;
+}
+
+.select-houses {
+  display: block;
 }
