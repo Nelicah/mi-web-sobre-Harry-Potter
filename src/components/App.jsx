@@ -7,7 +7,6 @@ function App() {
     name: "",
     house: "Gryffindor",
   });
-  const [houseClass, setHouseClass] = useState("cards");
 
   // Use Effect
   useEffect(() => {
