@@ -44,3 +44,12 @@ body {
 .select-houses {
   display: block;
 }
+
+.alternate-names::before {
+  content: "•";
+}
+
+.message {
+  font-weight: bold;
+  font-size: 2rem;
+}

@@ -6,10 +6,15 @@ import CharacterDetail from "./pages/CharacterDetail";
 
 function App() {
   const [characters, setCharacters] = useState([]);
+
   const [characterFiltered, setCharacterFiltered] = useState({
     name: "",
     house: "Gryffindor",
   });
+
+  const [message, setMessage] = useState("");
+
+  const [classMessage, setClassMessage] = useState("");
 
   // Use Effect
   useEffect(() => {
@@ -38,6 +43,17 @@ function App() {
       eachCharacter.house.includes(characterFiltered.house)
     );
 
+  /* const handleMessage = (ev) => {
+    ev.preventDefault();
+
+    if (characterFiltered.name === null) {
+      setMessage("¡No se ha encontrado ningún personaje con ese nombre!");
+      setClassMessage("message")
+    } else {
+
+    }
+  }; */
+
   return (
     <div className="dark-mode">
       <header>
@@ -56,7 +72,7 @@ function App() {
             }
           />
           <Route
-            path="/detail/:nameCharacter"
+            path="/detail/:idCharacter"
             element={<CharacterDetail characters={characters} />}
           />
         </Routes>

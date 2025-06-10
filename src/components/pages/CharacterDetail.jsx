@@ -1,22 +1,21 @@
 import { Link, useParams } from "react-router";
 
 function CharacterDetail({ characters }) {
-  const params = useParams();
+  const { idCharacter } = useParams();
 
-  console.log(params);
+  console.log(idCharacter);
 
-  /*  const characterFound = characters.find(
-    (eachCharacter) => eachCharacter.name === name
+  const characterFound = characters.find(
+    (eachCharacter) => eachCharacter.id === idCharacter
   );
   console.log(characterFound);
- */
 
-  /*   //const { image, name, house, alive, gender, species, alternate_names } =
-  characterFound; */
+  const { image, name, house, alive, gender, species, alternate_names } =
+    characterFound;
 
   return (
     <>
-      {/*   <div>
+      <div>
         <img
           src={
             image ||
@@ -27,7 +26,33 @@ function CharacterDetail({ characters }) {
       </div>
       <div>
         <h2>{name}</h2>
-      </div> */}
+        <dl>
+          <dt>Estatus:</dt>
+          <dd>{alive === true ? "Vivo" : "Muerto"}</dd>
+        </dl>
+        <dl>
+          <dt>Especie:</dt>
+          <dd>{species}</dd>
+        </dl>
+        <dl>
+          <dt>Género:</dt>
+          <dd>{gender}</dd>
+        </dl>
+        <dl>
+          <dt>Casa:</dt>
+          <dd>{house}</dd>
+        </dl>
+        {alternate_names && alternate_names.length > 0 && (
+          <dl>
+            <dt>Nombres alternativos:</dt>
+            {alternate_names.map((nombre, index) => (
+              <dd className="alternate-names" key={index}>
+                {nombre}
+              </dd>
+            ))}
+          </dl>
+        )}
+      </div>
       <div>
         <Link to="/">Volver</Link>
       </div>

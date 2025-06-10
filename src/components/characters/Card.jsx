@@ -2,7 +2,7 @@ import { Link } from "react-router";
 
 function Card({ character }) {
   return (
-    <Link to={"/detail/" + character.name}>
+    <Link to={"/detail/" + character.id}>
       <img
         className="card-image"
         src={
