@@ -1,5 +1,8 @@
 import "../styles/App.scss";
 import { useState, useEffect } from "react";
+import { Route, Routes } from "react-router";
+import LandingPage from "./pages/LandingPage";
+import CharacterDetail from "./pages/CharacterDetail";
 
 function App() {
   const [characters, setCharacters] = useState([]);
@@ -17,16 +20,11 @@ function App() {
       });
   }, []);
 
-  const handleInputCharacterNameFiltered = (ev) => {
+  const handleInputCharacterFiltered = (ev) => {
+    const { id, value } = ev.target;
     setCharacterFiltered({
       ...characterFiltered,
-      name: ev.target.value,
-    });
-  };
-  const handleInputCharacterHouseFiltered = (ev) => {
-    setCharacterFiltered({
-      ...characterFiltered,
-      house: ev.target.value,
+      [id]: value,
     });
   };
 
@@ -46,49 +44,22 @@ function App() {
         <h1>HARRY POTTER</h1>
       </header>
       <main>
-        <form onSubmit={(ev) => ev.preventDefault()}>
-          <input
-            className="input-name"
-            onInput={handleInputCharacterNameFiltered}
-            value={characterFiltered.name}
-            type="text"
-            name="name"
-            id="name"
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <LandingPage
+                characterFilter={handleInputCharacterFiltered}
+                characterFiltered={characterFiltered}
+                charactersFiltered={charactersFiltered}
+              />
+            }
           />
-          <select
-            className="select-houses"
-            onInput={handleInputCharacterHouseFiltered}
-            name="houses"
-            id="houses"
-          >
-            <option value="Gryffindor">Gryffindor</option>
-            <option value="Slytherin">Slytherin</option>
-            <option value="Hufflepuff">Hufflepuff</option>
-            <option value="Ravenclaw">Ravenclaw</option>
-            <option value="">Todas las casas</option>
-          </select>
-        </form>
-        <article>
-          <ul className="container-cards">
-            {charactersFiltered.map((eachCharacter) => (
-              <li
-                className={`cards ${eachCharacter.house.toLowerCase()}`}
-                key={eachCharacter.id}
-              >
-                <img
-                  className="card-image"
-                  src={
-                    eachCharacter.image ||
-                    "https://placehold.co/210x295/ffffff/666666/?format=svg&text=Harry+Potter"
-                  }
-                  alt={eachCharacter.name}
-                />
-                <h2>{eachCharacter.name}</h2>
-                <p>{eachCharacter.species}</p>
-              </li>
-            ))}
-          </ul>
-        </article>
+          <Route
+            path="/detail/:nameCharacter"
+            element={<CharacterDetail characters={characters} />}
+          />
+        </Routes>
       </main>
     </div>
   );
