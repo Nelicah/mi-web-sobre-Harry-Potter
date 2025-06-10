@@ -11,9 +11,10 @@ function CharacterDetail({ characters }) {
     characterFound;
 
   return (
-    <>
+    <div className={`card-detail  ${house.toLowerCase()}`}>
       <div>
         <img
+          className="card-detail-image"
           src={
             image ||
             "https://placehold.co/210x295/ffffff/666666/?format=svg&text=Harry+Potter"
@@ -21,27 +22,27 @@ function CharacterDetail({ characters }) {
           alt={name}
         />
       </div>
-      <div>
+      <div className="card-detail-container">
         <h2>{name}</h2>
         <dl>
-          <dt>Estatus:</dt>
-          <dd>{alive === true ? "Vivo" : "Muerto"}</dd>
+          <dt>Status:</dt>
+          <dd>{alive === true ? "alive ❣️" : "dead 💀"}</dd>
         </dl>
         <dl>
-          <dt>Especie:</dt>
+          <dt>Species:</dt>
           <dd>{species}</dd>
         </dl>
         <dl>
-          <dt>Género:</dt>
+          <dt>Gender:</dt>
           <dd>{gender}</dd>
         </dl>
         <dl>
-          <dt>Casa:</dt>
+          <dt>House:</dt>
           <dd>{house}</dd>
         </dl>
         {alternate_names && alternate_names.length > 0 && (
-          <dl>
-            <dt>Nombres alternativos:</dt>
+          <dl className="container-alternative-names">
+            <dt>Alternate names:</dt>
             {alternate_names.map((nombre, index) => (
               <dd className="alternate-names" key={index}>
                 {nombre}
@@ -50,10 +51,10 @@ function CharacterDetail({ characters }) {
           </dl>
         )}
       </div>
-      <div>
+      <div className="back">
         <Link to="/">Volver</Link>
       </div>
-    </>
+    </div>
   );
 }
 

@@ -12,10 +12,6 @@ function App() {
     house: "Gryffindor",
   });
 
-  const [message, setMessage] = useState("");
-
-  const [classMessage, setClassMessage] = useState("");
-
   // Use Effect
   useEffect(() => {
     fetch("https://hp-api.onrender.com/api/characters")

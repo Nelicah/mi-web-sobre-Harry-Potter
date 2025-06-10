@@ -1,7 +1,7 @@
 @use "./core/reset";
 
 :root {
-  margin-left: 50px;
+  margin: 2vh 5vw;
 }
 
 body {
@@ -10,14 +10,24 @@ body {
 
 .container-cards {
   display: grid;
-  grid-template-columns: 230px 230px 230px;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
 }
 
 .cards {
   list-style-type: none;
-  width: 150px;
-  border: solid 5px darkred;
+  width: 40vw;
   margin-bottom: 20px;
+  border: solid 5px white;
+}
+
+a {
+  text-decoration: none;
+  color: ghostwhite;
+}
+
+.cards.gryffindor {
+  border: solid 5px darkred;
 }
 
 .cards.slytherin {
@@ -37,6 +47,11 @@ body {
   object-fit: contain;
 }
 
+.card-text {
+  color: #f8f8ff;
+  padding: 10px;
+}
+
 .input-name {
   margin-bottom: 10px;
 }
@@ -54,4 +69,90 @@ body {
   font-size: 1.5rem;
   margin-top: 20px;
   color: darkmagenta;
+}
+
+.card-detail {
+  display: flex;
+  position: relative;
+  height: 40vh;
+  background-color: lightgrey;
+}
+
+.card-detail.gryffindor {
+  background-color: darkred;
+  color: ghostwhite;
+}
+
+.card-detail-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.card-detail-image {
+  width: 30vw;
+  margin: 5px;
+}
+
+.alive-death-image {
+  width: 22px;
+  filter: invert(100%);
+  display: inline;
+}
+
+dl {
+  display: flex;
+  gap: 5px;
+}
+dt {
+  text-decoration: underline;
+  font-size: 1rem;
+}
+
+.container-alternative-names {
+  display: block;
+}
+
+.back {
+  position: absolute;
+  top: 200px;
+  right: 30px;
+  text-decoration: underline;
+  color: gainsboro;
+}
+
+.back::before {
+  content: "⟪";
+  font-weight: bold;
+}
+
+@media (min-width: 768px) {
+  :root {
+    margin: 20px 20px;
+  }
+
+  .container-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .cards {
+    width: 200px;
+  }
+
+  .card-detail-image {
+    width: 150px;
+    margin: 20px;
+  }
+
+  .card-detail {
+    display: flex;
+    position: relative;
+    height: 280px;
+    width: 730px;
+  }
+
+  .card-detail-container {
+    margin: 20px;
+  }
 }

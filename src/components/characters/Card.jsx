@@ -11,8 +11,10 @@ function Card({ character }) {
         }
         alt={character.name}
       />
-      <h2>{character.name}</h2>
-      <p>{character.species}</p>
+      <div className="card-text">
+        <h2>{character.name}</h2>
+        <p>{character.species}</p>
+      </div>
     </Link>
   );
 }
