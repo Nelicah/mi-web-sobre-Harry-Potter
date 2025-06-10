@@ -16,7 +16,7 @@ body {
 .cards {
   list-style-type: none;
   width: 150px;
-  border: solid 5px red;
+  border: solid 5px darkred;
   margin-bottom: 20px;
 }
 
@@ -51,5 +51,7 @@ body {
 
 .message {
   font-weight: bold;
-  font-size: 2rem;
+  font-size: 1.5rem;
+  margin-top: 20px;
+  color: darkmagenta;
 }

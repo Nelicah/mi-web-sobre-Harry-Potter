@@ -3,12 +3,9 @@ import { Link, useParams } from "react-router";
 function CharacterDetail({ characters }) {
   const { idCharacter } = useParams();
 
-  console.log(idCharacter);
-
   const characterFound = characters.find(
     (eachCharacter) => eachCharacter.id === idCharacter
   );
-  console.log(characterFound);
 
   const { image, name, house, alive, gender, species, alternate_names } =
     characterFound;
