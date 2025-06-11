@@ -6,6 +6,7 @@ function LandingPage({
   characterFilter,
   characterFiltered,
   charactersFiltered,
+  resetFilters,
 }) {
   return (
     <>
@@ -14,8 +15,10 @@ function LandingPage({
         <Select
           filter={characterFilter}
           characterFiltered={characterFiltered}
+          characterFilter={characterFilter}
         />
       </form>
+      <button onClick={resetFilters}>Reset</button>
       <article>
         <List charactersFiltered={charactersFiltered} />
       </article>

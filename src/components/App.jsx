@@ -10,6 +10,8 @@ function App() {
   const [characterFiltered, setCharacterFiltered] = useState({
     name: "",
     house: "Gryffindor",
+    alive: "",
+    role: "",
   });
 
   // Use Effect
@@ -37,7 +39,33 @@ function App() {
     )
     .filter((eachCharacter) =>
       eachCharacter.house.includes(characterFiltered.house)
-    );
+    )
+    .filter((c) => {
+      if (characterFiltered.alive === "true") {
+        return c.alive === true;
+      } else if (characterFiltered.alive === "false") {
+        return c.alive === false;
+      }
+      return true; // Sin filtro activo
+    })
+    .filter((c) => {
+      if (characterFiltered.role === "student") {
+        return c.hogwartsStudent === true;
+      } else if (characterFiltered.role === "staff") {
+        return c.hogwartsStaff === true;
+      }
+      return true; // sin filtro aplicado
+    })
+    .sort((a, b) => a.name.localeCompare(b.name));
+
+  const handleResetFilters = () => {
+    setCharacterFiltered({
+      name: "",
+      house: "Gryffindor",
+      role: "",
+      alive: "",
+    });
+  };
 
   return (
     <div className="dark-mode">
@@ -53,6 +81,7 @@ function App() {
                 characterFilter={handleInputCharacterFiltered}
                 characterFiltered={characterFiltered}
                 charactersFiltered={charactersFiltered}
+                resetFilters={handleResetFilters}
               />
             }
           />
