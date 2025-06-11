@@ -2,7 +2,7 @@ function Select({ filter, characterFiltered, characterFilter }) {
   return (
     <>
       <div className="input-and-selects">
-        <label htmlFor="role">Filtrar por casa:</label>
+        <label htmlFor="role">Filter by house:</label>
         <select
           onInput={filter}
           value={characterFiltered.house}
@@ -17,7 +17,7 @@ function Select({ filter, characterFiltered, characterFilter }) {
         </select>
       </div>
       <div className="input-and-selects">
-        <label htmlFor="role">Filtrar por estado:</label>
+        <label htmlFor="role">Filter by state:</label>
         <select
           id="alive"
           value={characterFiltered.alive}
@@ -29,7 +29,7 @@ function Select({ filter, characterFiltered, characterFilter }) {
         </select>
       </div>
       <div className="input-and-selects">
-        <label htmlFor="role">Filtrar por rol:</label>
+        <label htmlFor="role">Filter by rol:</label>
         <select
           id="role"
           value={characterFiltered.role}
