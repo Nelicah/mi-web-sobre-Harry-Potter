@@ -3,6 +3,8 @@ import { useState, useEffect } from "react";
 import { Route, Routes } from "react-router";
 import LandingPage from "./pages/LandingPage";
 import CharacterDetail from "./pages/CharacterDetail";
+import libros from "../images/libros.webp";
+import logoHP from "../images/logo-harry-potter.png";
 
 function App() {
   const [characters, setCharacters] = useState([]);
@@ -70,13 +72,9 @@ function App() {
   return (
     <div className="dark-mode">
       <header>
+        <img src={logoHP} alt="logo Harry Potter" className="logo" />
         <img
-          src="../public/logo-harry-potter.png"
-          alt="logo Harry Potter"
-          className="logo"
-        />
-        <img
-          src="../public/libros.webp"
+          src={libros}
           alt="pila de libros y uno levita"
           className="books-img"
         />
