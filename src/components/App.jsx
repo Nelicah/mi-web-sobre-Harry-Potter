@@ -71,12 +71,12 @@ function App() {
     <div className="dark-mode">
       <header>
         <img
-          src="../public/Logo-Harry-potter.png"
+          src="../public/logo-harry-potter.png"
           alt="logo Harry Potter"
           className="logo"
         />
         <img
-          src="../public/UQ84N6dIWObZWILqsE.webp"
+          src="../public/libros.webp"
           alt="pila de libros y uno levita"
           className="books-img"
         />
