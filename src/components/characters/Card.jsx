@@ -11,8 +11,8 @@ function Card({ character }) {
         }
         alt={character.name}
       />
-      <div className="card-text">
-        <h2>{character.name}</h2>
+      <div className={`card-text ${character.house.toLowerCase()}`}>
+        <p className="card-text-name">{character.name}</p>
         <p>{character.species}</p>
       </div>
     </Link>

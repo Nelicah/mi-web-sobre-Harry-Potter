@@ -8,6 +8,56 @@ body {
   background-color: grey;
 }
 
+.logo {
+  display: block;
+  margin: 0 auto;
+  width: 55vw;
+}
+
+.books-img {
+  display: block;
+  margin-bottom: 50px;
+  margin-inline: auto;
+  width: 25vw;
+}
+
+form {
+  max-width: 400px; /* o el ancho que quieras */
+  margin: 2rem auto; /* centrado horizontal */
+}
+
+label {
+  width: 200px; /* Ancho fijo para que queden alineados */
+  text-align: left;
+  font-weight: 600;
+  color: ghostwhite;
+}
+
+.input-and-selects {
+  display: flex;
+  align-items: center;
+}
+
+input,
+select {
+  margin: 5px;
+  border: solid 3px black;
+  background-color: grey;
+  height: 25px;
+  color: ghostwhite;
+  width: 30vw;
+}
+
+.btn {
+  display: block;
+  margin: 0 auto;
+  width: 15vw;
+  height: 5vh;
+  border: solid 3px black;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
 .container-cards {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -18,7 +68,8 @@ body {
   list-style-type: none;
   width: 40vw;
   margin-bottom: 20px;
-  border: solid 5px white;
+  border: solid 5px #808b96;
+  background-color: #808b96;
 }
 
 a {
@@ -28,18 +79,22 @@ a {
 
 .cards.gryffindor {
   border: solid 5px darkred;
+  background-color: darkred;
 }
 
 .cards.slytherin {
   border: solid 5px darkgreen;
+  background-color: darkgreen;
 }
 
 .cards.hufflepuff {
   border: solid 5px gold;
+  background-color: gold;
 }
 
 .cards.ravenclaw {
   border: solid 5px darkblue;
+  background-color: darkblue;
 }
 
 .card-image {
@@ -49,12 +104,15 @@ a {
 }
 
 .card-text {
-  color: #f8f8ff;
-  padding: 10px;
+  color: #fef5e7;
+  padding: 0.5rem;
 }
 
-.input-name {
-  margin-bottom: 10px;
+.card-text-name {
+  font-family: "Edu NSW ACT Cursive", cursive;
+  font-weight: bold;
+  font-size: 1.4rem;
+  color: #f7f7d4;
 }
 
 .alternate-names::before {

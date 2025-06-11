@@ -70,7 +70,16 @@ function App() {
   return (
     <div className="dark-mode">
       <header>
-        <h1>HARRY POTTER</h1>
+        <img
+          src="../public/Logo-Harry-potter.png"
+          alt="logo Harry Potter"
+          className="logo"
+        />
+        <img
+          src="../public/UQ84N6dIWObZWILqsE.webp"
+          alt="pila de libros y uno levita"
+          className="books-img"
+        />
       </header>
       <main>
         <Routes>

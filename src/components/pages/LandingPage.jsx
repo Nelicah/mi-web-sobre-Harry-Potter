@@ -18,7 +18,9 @@ function LandingPage({
           characterFilter={characterFilter}
         />
       </form>
-      <button onClick={resetFilters}>Reset</button>
+      <button className="btn" onClick={resetFilters}>
+        Reset
+      </button>
       <article>
         <List charactersFiltered={charactersFiltered} />
       </article>
