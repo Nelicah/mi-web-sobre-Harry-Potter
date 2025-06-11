@@ -2,7 +2,7 @@ function Select({ filter, characterFiltered, characterFilter }) {
   return (
     <>
       <div className="input-and-selects">
-        <label htmlFor="role">Filter by house:</label>
+        <label htmlFor="role">Filter by House:</label>
         <select
           onInput={filter}
           value={characterFiltered.house}
@@ -13,19 +13,19 @@ function Select({ filter, characterFiltered, characterFilter }) {
           <option value="Slytherin">Slytherin</option>
           <option value="Hufflepuff">Hufflepuff</option>
           <option value="Ravenclaw">Ravenclaw</option>
-          <option value="">Todas las casas</option>
+          <option value="">All Houses</option>
         </select>
       </div>
       <div className="input-and-selects">
-        <label htmlFor="role">Filter by state:</label>
+        <label htmlFor="role">Filter by status:</label>
         <select
           id="alive"
           value={characterFiltered.alive}
           onChange={characterFilter}
         >
-          <option value="">Todos</option>
-          <option value="true">Vivos</option>
-          <option value="false">Muertos</option>
+          <option value="">All</option>
+          <option value="true">Alive</option>
+          <option value="false">Dead</option>
         </select>
       </div>
       <div className="input-and-selects">
@@ -35,8 +35,8 @@ function Select({ filter, characterFiltered, characterFilter }) {
           value={characterFiltered.role}
           onChange={characterFilter}
         >
-          <option value="">Todos</option>
-          <option value="student">Estudiantes</option>
+          <option value="">All</option>
+          <option value="student">Students</option>
           <option value="staff">Staff</option>
         </select>
       </div>

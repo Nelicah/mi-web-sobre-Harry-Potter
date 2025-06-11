@@ -36,6 +36,7 @@ label {
 .input-and-selects {
   display: flex;
   align-items: center;
+  margin: 5px;
 }
 
 input,
@@ -233,5 +234,11 @@ dt {
   .container-cards {
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 16px;
+  }
+
+  .input-and-selects {
+    display: flex;
+    align-items: center;
+    margin: 10px;
   }
 }
