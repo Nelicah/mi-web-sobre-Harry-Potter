@@ -44,7 +44,8 @@ a {
 
 .card-image {
   width: 100%;
-  object-fit: contain;
+  height: 300px;
+  object-fit: cover;
 }
 
 .card-text {
@@ -58,6 +59,7 @@ a {
 
 .select-houses {
   display: block;
+  margin-bottom: 20px;
 }
 
 .alternate-names::before {
@@ -74,7 +76,7 @@ a {
 .card-detail {
   display: flex;
   position: relative;
-  height: 40vh;
+  height: 45vh;
   background-color: lightgrey;
 }
 
@@ -82,16 +84,32 @@ a {
   background-color: darkred;
   color: ghostwhite;
 }
+.card-detail.slytherin {
+  background-color: darkgreen;
+  color: ghostwhite;
+}
+.card-detail.hufflepuff {
+  background-color: darkgoldenrod;
+  color: ghostwhite;
+}
+.card-detail.ravenclaw {
+  background-color: darkblue;
+  color: ghostwhite;
+}
 
 .card-detail-container {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 5px;
+  margin-left: 20px;
+  margin-top: 10px;
 }
 
 .card-detail-image {
   width: 30vw;
-  margin: 5px;
+  margin: 10px;
+  height: 240px;
+  object-fit: cover;
 }
 
 .alive-death-image {
@@ -103,6 +121,7 @@ a {
 dl {
   display: flex;
   gap: 5px;
+  align-items: center;
 }
 dt {
   text-decoration: underline;
@@ -115,8 +134,8 @@ dt {
 
 .back {
   position: absolute;
-  top: 200px;
-  right: 30px;
+  top: 295px;
+  right: 25px;
   text-decoration: underline;
   color: gainsboro;
 }
@@ -154,5 +173,12 @@ dt {
 
   .card-detail-container {
     margin: 20px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container-cards {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
   }
 }

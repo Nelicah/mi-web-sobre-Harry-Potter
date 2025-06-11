@@ -39,17 +39,6 @@ function App() {
       eachCharacter.house.includes(characterFiltered.house)
     );
 
-  /* const handleMessage = (ev) => {
-    ev.preventDefault();
-
-    if (characterFiltered.name === null) {
-      setMessage("¡No se ha encontrado ningún personaje con ese nombre!");
-      setClassMessage("message")
-    } else {
-
-    }
-  }; */
-
   return (
     <div className="dark-mode">
       <header>
