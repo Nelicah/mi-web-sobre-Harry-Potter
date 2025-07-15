@@ -1,6 +1,6 @@
 import "../styles/App.scss";
 import { useState, useEffect } from "react";
-import { Route, Routes } from "react-router";
+import { Route, Routes, useLocation } from "react-router";
 import LandingPage from "./pages/LandingPage";
 import CharacterDetail from "./pages/CharacterDetail";
 import libros from "../images/libros.webp";
@@ -69,15 +69,19 @@ function App() {
     });
   };
 
+  const location = useLocation();
+
   return (
     <div className="dark-mode">
       <header>
         <img src={logoHP} alt="logo Harry Potter" className="logo" />
-        <img
-          src={libros}
-          alt="pila de libros y uno levita"
-          className="books-img"
-        />
+        {location.pathname === "/" && (
+          <img
+            src={libros}
+            alt="pila de libros y uno levita"
+            className="books-img"
+          />
+        )}
       </header>
       <main>
         <Routes>

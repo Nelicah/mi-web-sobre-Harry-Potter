@@ -3,9 +3,26 @@ import { Link, useParams } from "react-router";
 function CharacterDetail({ characters }) {
   const { idCharacter } = useParams();
 
+  // Mientras se cargan los personajes si compartimos el url del pj
+  if (characters.length === 0) {
+    return (
+      <section className="character-detail">
+        <p>Cargando...</p>
+      </section>
+    );
+  }
+
   const characterFound = characters.find(
     (eachCharacter) => eachCharacter.id === idCharacter
   );
+
+  if (!characterFound) {
+    return (
+      <section className="character-detail">
+        <p>El personaje no existe o el enlace es incorrecto.</p>
+      </section>
+    );
+  }
 
   const { image, name, house, alive, gender, species, alternate_names } =
     characterFound;
