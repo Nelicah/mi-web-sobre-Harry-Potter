@@ -1,0 +1,37 @@
+form {
+  max-width: 400px; /* o el ancho que quieras */
+  margin: 2rem auto; /* centrado horizontal */
+}
+
+label {
+  width: 200px; /* Ancho fijo para que queden alineados */
+  text-align: left;
+  font-weight: 600;
+  color: ghostwhite;
+}
+
+.input-and-selects {
+  display: flex;
+  align-items: center;
+  margin: 5px;
+}
+
+input,
+select {
+  margin: 5px;
+  border: solid 3px black;
+  background-color: grey;
+  height: 25px;
+  color: ghostwhite;
+  width: 30vw;
+}
+
+.btn {
+  display: block;
+  margin: 0 auto;
+  width: 15vw;
+  height: 5vh;
+  border: solid 3px black;
+  font-weight: bold;
+  margin-bottom: 20px;
+}

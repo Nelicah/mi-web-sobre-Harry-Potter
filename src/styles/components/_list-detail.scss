@@ -1,0 +1,40 @@
+.message {
+  font-weight: bold;
+  font-size: 1.5rem;
+  margin-top: 20px;
+  color: darkmagenta;
+}
+
+.container-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.cards {
+  list-style-type: none;
+  width: 40vw;
+  margin-bottom: 20px;
+  border: solid 5px #808b96;
+  background-color: #808b96;
+}
+
+.cards.gryffindor {
+  border: solid 5px darkred;
+  background-color: darkred;
+}
+
+.cards.slytherin {
+  border: solid 5px darkgreen;
+  background-color: darkgreen;
+}
+
+.cards.hufflepuff {
+  border: solid 5px gold;
+  background-color: gold;
+}
+
+.cards.ravenclaw {
+  border: solid 5px darkblue;
+  background-color: darkblue;
+}
